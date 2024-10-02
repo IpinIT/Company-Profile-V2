@@ -1,0 +1,373 @@
+/* import fontstyle */
+@import url(/css/clash-display.css);
+
+/* membuat template style yang tinggal dipanggil */
+/* VARIABLES */
+:root {
+  --c-dark: #212529;
+  --c-brand: rgb(10, 9, 9);
+  --c-brand-light: #868d95;
+  --c-brand-rgb: 78, 87, 212;
+  --c-body: #8e8d8a;
+  --font-base: "ClashDisplay", sans-serif;
+  --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+  --transition: all 0.5s ease;
+}
+
+/* RESET & HELPERS */
+body {
+  font-family: var(--font-base);
+  line-height: 1.7;
+  color: var(--c-body);
+}
+
+h1,h2,h3,h4,h5,h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600;
+  color: var(--c-dark);
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-brand);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--c-brand-light);
+}
+
+img {
+  width: 400px;
+  height: 300px;
+}
+
+.section-padding {
+  padding-top: 140px;
+}
+
+.theme-shadow {
+  box-shadow: var(--box-shadow);
+}
+
+/* IMAGE ZOOM */
+.image-zoom {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-zoom-warper {
+
+  position: relative;
+  overflow: hidden;
+}
+
+.image-zoom-warper img {
+  transition: var(--transition);
+}
+
+.image-zoom:hover .image-zoom-warper img {
+  transform: scale(1.1);
+}
+
+/* NAVBAR */
+.navbar {
+  box-shadow: var(--box-shadow);
+  background-color: grey;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: white;
+}
+
+.navbar-nav .nav-link.active {
+  color: grey;
+}
+
+.navbar img{
+  height: 60px;
+  width:  130px;
+}
+
+
+/* BUTTON */
+.btn {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 10px 24px;
+}
+
+.btn-brand {
+  background-color: var(--c-brand);
+  border-color: var(--c-brand);
+  color: white;
+}
+
+.btn-brand:hover {
+  color: white;
+}
+
+.btn-brand:visited {
+    background-color: var(--c-brand) !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+
+/* HERO */
+#hero {
+  background: linear-gradient(rgba(128, 128, 128, 0.708), rgba(128, 128, 128, 0.7)), url(../assets/img/header/header.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+#hero h1 {
+  font-size: 5rem;
+}
+#hero h5 {
+  font-size: 2rem;
+}
+
+/* SECTION TITLE */
+.section-title {
+  margin-bottom: 60px;
+}
+
+.section-title .line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--c-brand);
+  margin: 16px auto 24px auto;
+}
+
+.section-title p {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ICONBOX */
+.iconbox {
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--c-brand-rgb), 0.1);
+  color: var(--c-brand);
+  font-size: 34px;
+  flex: none;
+}
+
+/* ABOUT */
+
+
+/* SERVICE */
+.service {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.service::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background: rgba(var(--c-brand-rgb), 0.2);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: var(--transition);
+}
+
+.service:hover::after {
+  width: 100%;
+  height: 100%;
+  background: var(--c-brand);
+  z-index: -1;
+}
+
+.service:hover h5,
+.service:hover p {
+  color: white;
+}
+
+.service:hover .iconbox {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* PRODUCT */
+.product-item .iconbox {
+  background-color: var(--c-brand);
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.product-item:hover .iconbox {
+  opacity: 1;
+  top: 50%;
+}
+
+.product .container-panjang img {
+  height: 500px;
+  width: 380px;
+}
+
+
+/* PROJECT */
+
+
+/* client */
+.clients {
+  justify-content: center;
+  text-align: center;
+
+}
+
+.client-logo-wrapper {
+  width: 100%;
+  height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.client-logo-wrapper img {
+  max-width: 300px;
+  max-height: 200px;
+  object-fit: contain; /* Memastikan gambar tidak terpotong dan proporsional */
+}
+
+/* CONTACT */
+#contact {
+  position: relative;
+  z-index: 2;
+}
+
+#contact::after {
+  content: "";
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(rgba(128, 128, 128, 0.708), rgba(128, 128, 128, 0.7)), url(../assets/img/header/header.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#contact .form-control {
+  border-radius: 0;
+}
+
+#contact .form-control:focus {
+  box-shadow: none;
+  border-color: var(--c-brand);
+}
+
+/* FOOTER */
+footer {
+  padding-top: 120px;
+}
+
+.footer-top {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-bottom .author {
+  font-size: 0.8rem;
+}
+
+
+footer li,
+footer p,
+footer a {
+  color: rgba(255,255,255,0.7);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .line {
+  width: 40px;
+  height: 4px;
+  background-color: var(--c-brand-light);
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 100px;
+}
+
+.social-icons a:hover {
+  background-color: var(--c-brand);
+  color: white;
+}
+
+#foothome {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px; /* Jarak dari bawah layar */
+  right: 20px;  /* Jarak dari kanan layar */
+  background-color: #25d366;  /* Warna hijau khas WhatsApp */
+  color: white;
+  width: 60px;  /* Lebar tombol */
+  height: 60px; /* Tinggi tombol */
+  border-radius: 50%;  /* Membuat tombol berbentuk lingkaran sempurna */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe57; /* Warna saat dihover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Tambah bayangan saat dihover */
+}
+
+.whatsapp-btn i {
+  font-size: 28px; /* Ukuran ikon */
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+  font-size: 25px;
+}
+#hero h5 {
+  font-size: 1rem;
+}
+
+}
